@@ -8,9 +8,11 @@
         <div class="header">
             <div class="container">
                 <ul class="nav">
-                    <a href ="./login.html"><li>Log in</li></a>
-                    <a href="./signup.html"><li>Sign up</li></a>
-                    <a href="./Main.html"><li>Search</li></a>
+                    <a href ="./login_page.html"><li>Log in</li></a>
+                    
+                    <a href="./signup_page.html"><li>Sign up</li></a>
+                    
+                    <a href="./index.html"><li>Search</li></a>
                     <li>Contact</li>
                 </ul>
             </div>
@@ -19,41 +21,40 @@
         <div class="jumbotron">
             <div class="container">
                 <div class="main">
-                    <h1>Where amazing happens</h1>
+                    <h1>Game On!</h1>
                     <!--<a class="btn-main" href="#">Get started</a>-->
                     <div class = "search">
-                        <form action="searchTitle.php" method="get" target="_blank">
+                        <form action="signup.php" method="post">
                             
                             <!--<h3> Title:</h3>-->
-                            <input type="text" name="TITLE" placeholder="Enter your favorite player or team" class="searcher">
-                                <select name="rankStandard" class="selector" placeholder = "- -">
-                                    <option value="player">Search Player</option>
-                                    <option value="team">Search Team</option>
-                                </select>
+                            <input type="text" name="username" placeholder="Enter your user name/email:" class="searcher"> <br><br><br>
+                            <input type="password" name="password" placeholder="Enter your password:" class="searcher"> <br><br><br>
+                            <input type="text" name="email" placeholder="Enter your Emali:" class="searcher">
                                 <br>
+                                
                                 <!--<h3>Search by user:</h3>
-                                <input name="searchUser" type="radio" value="true" checked="checked" />Yes
-                                <input name="searchUser" type="radio" value="false" checked="checked"/>No<br>
-                                
-                                
-                                <h3>Search by genre:</h3>
-                                <input name="useGenre" type="radio" value="true"/>Yes
-                                <input name="useGenre" type="radio" value="false" checked="checked" />No<br>-->
+                                 <input name="searchUser" type="radio" value="true" checked="checked" />Yes
+                                 <input name="searchUser" type="radio" value="false" checked="checked"/>No<br>
+                                 
+                                 
+                                 <h3>Search by genre:</h3>
+                                 <input name="useGenre" type="radio" value="true"/>Yes
+                                 <input name="useGenre" type="radio" value="false" checked="checked" />No<br>-->
                                 
                                 <br><br>
-                                <input type="submit" value="SEARCH" class="btn-submit">
+                                <input type="submit" value="Sign Up" class="btn-submit">
                                     
                                     
                                     
                                     <!--    <input name="InFavorites" type="radio" value="1" />Search Favorited Video<br>-->
                                     <br>
                                     </form>
-
+                        
                     </div>
                 </div>
             </div>
         </div>
-    
+        
         
         
         
