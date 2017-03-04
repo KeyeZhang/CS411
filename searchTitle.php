@@ -73,3 +73,4 @@ if($search != ''){
 else{
 	echo "<p>Please enter a search query</p>";
 }
+//test
