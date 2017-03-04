@@ -39,7 +39,7 @@ if($search != ''){
 			}
 	}
 	elseif ($selectoption == 'team') {
-		if (preg_match("/^[a-zA-Z]+/", $search)) {
+		if (preg_match("/^[a-zA-Z0-9]+/", $search)) {
 			$sql = "SELECT * FROM Teams_Statistics WHERE Team_name LIKE '%$search%' ";
 			$result =  mysql_query($sql) or die(mysql_error());
 			if (mysql_num_rows($result)==0) {
@@ -66,7 +66,7 @@ if($search != ''){
 				echo '</table>';
 		}
 			else{
-				echo "Please input English letters!";
+				echo "Please input English letters or numbers!";
 			}		
 	}
 }
