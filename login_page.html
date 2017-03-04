@@ -9,10 +9,8 @@
             <div class="container">
                 <ul class="nav">
                     <a href ="./login_page.html"><li>Log in</li></a>
-                    
                     <a href="./signup_page.html"><li>Sign up</li></a>
-                    
-                    <a href="./index.html"><li>Search</li></a>
+                    <a href="./Main.html"><li>Search</li></a>
                     <li>Contact</li>
                 </ul>
             </div>
@@ -24,11 +22,11 @@
                     <h1>Game On!</h1>
                     <!--<a class="btn-main" href="#">Get started</a>-->
                     <div class = "search">
-                        <form action="searchTitle.php" method="get" target="_blank">
+                        <form action="login.php" method="POST">
                             
                             <!--<h3> Title:</h3>-->
-                            <input type="text" name="username" placeholder="Enter your user name/email:" class="searcher"> <br><br><br>
-                            <input type="text" name="password" placeholder="Enter your password:" class="searcher">
+                            <input type="text" name="username" placeholder="Enter your user name:" class="searcher"> <br><br><br>
+                            <input type="password" name="password" placeholder="Enter your password:" class="searcher">
                                 <br>
                                 <!--<h3>Search by user:</h3>
                                  <input name="searchUser" type="radio" value="true" checked="checked" />Yes

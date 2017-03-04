@@ -1,12 +1,20 @@
- <?php
+<?php
+session_start();
+include 'dbh.php';
 
- include 'dbh.php';
+$username = $_POST['username'];
+$password = $_POST['password'];
 
- $username = $_POST['username'];
- $password = $_POST['password'];
-
-$sql = "INSERT INTO user (first, last, uid, pwd) 
-VALUES ('$first', '$last', '$uid', '$pwd')";
+$sql = "SELECT * FROM user WHERE username = '$username' AND pwd = '$password'";
 $result = $conn->query($sql);
 
-header("Location: index.php");
+if (!$row = $result->fetch_assoc()){
+    echo "Your username or password is incorrect!";
+}
+else {
+	$_SESSION['id'] = $row['id'];
+}
+
+header("Location: index.html");
+
+?>
