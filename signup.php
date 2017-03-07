@@ -1,13 +1,15 @@
-<?php
-include 'dbh.php';
+ <?php
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-$email = $_POST['email'];
+ include 'dbh.php';
+
+ $username = $_POST['username'];
+ $password = $_POST['password'];
+ $email = $_POST['email'];
 
 $sql = "INSERT INTO user (username, pwd, email) 
 VALUES ('$username', '$password', '$email')";
 $result = $conn->query($sql);
 
-header("location: preference.html");
+header("location:http://sometimesnaive.web.engr.illinois.edu/index.html");
+
 ?>
