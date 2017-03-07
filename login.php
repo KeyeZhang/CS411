@@ -8,6 +8,7 @@ $password = $_POST['password'];
 $sql = "SELECT * FROM user WHERE username = '$username' AND pwd = '$password'";
 $result = $conn->query($sql);
 
+    
 if (!$row = $result->fetch_assoc()){
     echo "Your username or password is incorrect!";
 }

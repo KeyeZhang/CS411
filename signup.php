@@ -6,6 +6,7 @@
  $password = $_POST['password'];
  $email = $_POST['email'];
 
+     
 $sql = "INSERT INTO user (username, pwd, email) 
 VALUES ('$username', '$password', '$email')";
 $result = $conn->query($sql);
