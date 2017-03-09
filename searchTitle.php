@@ -87,7 +87,7 @@ if($search != ''){
 				echo '</table>';
 		}
 			else{
-				echo "Please input English letters!";
+				echo "<p>Please input English letters!</p>";
 			}
 	}
 	elseif ($selectoption == 'team') {
@@ -123,7 +123,7 @@ if($search != ''){
             
 		}
 			else{
-				echo "Please input English letters or numbers!";
+				echo "<p>Please input English letters or numbers!</p>";
 			}		
 	}
 }

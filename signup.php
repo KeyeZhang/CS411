@@ -11,6 +11,6 @@ $sql = "INSERT INTO user (username, pwd, email)
 VALUES ('$username', '$password', '$email')";
 $result = $conn->query($sql);
 
-header("location:http://sometimesnaive.web.engr.illinois.edu/index.html");
+header("location: preference.html");
 
 ?>
