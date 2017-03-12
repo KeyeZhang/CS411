@@ -22,6 +22,6 @@ else {
 	$_SESSION['id'] = $row['id'];
 }
 
-header("location: preference.html");
+header("location: preference_page.php");
 
 ?>

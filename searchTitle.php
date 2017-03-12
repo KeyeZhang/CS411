@@ -1,3 +1,6 @@
+<?php
+    session_start();
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,24 +12,30 @@
 <body>
 
 <div class="header">
-
-    <div class="container">
-
-        <ul class="nav">
-
-        <a href ="./login_page.html"><li>Profile</li></a>
-
-        <a href="./signup_page.html"><li>Setting</li></a>
-
-        <a href="./index.html"><li>Search</li></a>
-
-        <li>Contact</li>
-
-        </ul>
-
-    </div>
-
+<div class="container">
+<ul class="nav">
+<?php
+    if (isset($_SESSION['id'])) {
+        ?>
+<a class="afterlogin" href='./logout.php'><li>Log out</li></a>
+<a href="./signup_page.php"><li>Sign up</li></a>
+<a href="./index.php"><li>Search</li></a>
+<li>Contact</li>
+<a class="afterlogin" href='./update_page.php'><li>Profile</li></a>
+<?php
+    }
+    else {
+        ?>
+<a href ="./login_page.php"><li>Log in</li></a>
+<a href="./signup_page.php"><li>Sign up</li></a>
+<a href="./index.php"><li>Search</li></a>
+<li>Contact</li>
+<?php
+    }
+    ?>
+</ul>
 </div>
+</div>>
 
 
 <div class="jumbotron">
@@ -35,7 +44,7 @@
 
         <div class="main">
 
-            
+
         </div>
 
     </div>
@@ -72,16 +81,26 @@ if($search != ''){
         				foreach($row as $key => $field) {
            					echo '<th>' . htmlspecialchars($key) . '</th>';
         				}
+                        if (isset($_SESSION['id'])) {
+                        echo '<th>Perference</th>';
+                        }
         				echo '</tr>';
                         echo '</thead>';
         			}
                     echo '<tbody>';
         			echo '<tr>';
-					foreach ($row as $key => $field) {	
-						echo '<td>' . htmlentities($field).'</td>';	
+                    $first_col1 = true;
+					foreach ($row as $key => $field) {
+                        if($first_col1){
+                            $first_col1 = false;
+                            $temp1 = htmlentities($field);
+                        }
+						echo '<td>' . htmlentities($field).'</td>';
 					}
-								
-			 	echo "</tr>";
+                if (isset($_SESSION['id'])) {
+                echo '<form action="add_preplayer.php" method="post" target="rfFrame"><td><input type="hidden" name="preplayer" value="'. "$temp1".'"><input type="submit" value="prefer" class="btn-submit"></td></form><iframe style="display: none" id="rfFrame" name="rfFrame" src="about:blank"></iframe>';
+                }
+                echo '</tr>';
 			}
                 echo '</tbody>';
 				echo '</table>';
@@ -108,14 +127,24 @@ if($search != ''){
         				foreach($row as $key => $field) {
            					echo '<th>' . htmlspecialchars($key) . '</th>';
         				}
+                        if (isset($_SESSION['id'])) {
+                            echo '<th>Perference</th>';
+                        }
         				echo '</tr>';
                         echo '</thead>';
         			}
         			echo '<tr>';
-					foreach ($row as $key => $field) {	
+                    $first_col2 = true;
+					foreach ($row as $key => $field) {
+                        if($first_col2){
+                            $first_col2 = false;
+                            $temp2 = htmlentities($field);
+                        }
 						echo '<td>' . htmlentities($field).'</td>';	
 					}
-								
+                if (isset($_SESSION['id'])) {
+                    echo '<form action="add_preteam.php" method="post" target="rfFrame"><td><input type="hidden" name="preteam" value="'. "$temp2".'"><input type="submit" value="prefer" class="btn-submit"></td></form><iframe style="display: none" id="rfFrame" name="rfFrame" src="about:blank"></iframe>';
+                }
 			 	echo '</tr>';
 			}
                 echo '</tbody>';

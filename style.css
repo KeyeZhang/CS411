@@ -3,6 +3,11 @@
 html, body {
     margin: 0;
     padding: 0;
+    background: #EEE;
+}
+
+.afterlogin {
+    text-align: right;
 }
 
 .container {
@@ -15,6 +20,13 @@ html, body {
     background: url("http://wallpapercave.com/wp/WFTMul0.jpg") no-repeat center center;
     background-size: cover;
     height: 800px;
+}
+
+
+.jumbotron2 {
+    background: url("http://blog.f64.ro/wp-content/uploads/2016/12/galerie-wallcoverings-galerie-memories-2-antique-books-wallpaper-g56132-p867-1286_zoom.jpg") no-repeat center center;
+    background-size: cover;
+    height: 400px;
 }
 
 .header {
@@ -37,11 +49,16 @@ html, body {
     text-transform: uppercase;
 }
 
+
+
+
 .main {
     position: relative;
     top: 180px;
     text-align: center;
 }
+
+
 
 .search {
     position: relative;
@@ -73,6 +90,14 @@ html, body {
     width: 600px;
 }
 
+.searcherupdate{
+    color: #fff;
+    background-color: #333;
+    height:30px;
+    width: 600px;
+    font-size: 18px;
+}
+
 .selector{
     color: #fff;
     background-color: #333;
@@ -94,6 +119,21 @@ html, body {
     margin-bottom: 80px;
     text-transform: uppercase;
 }
+
+
+.main h4 {
+        font-family: 'Lato', sans-serif;
+        
+        padding: 20px;
+        text-align: left;
+        width: 33.3333%;
+        
+        font-size: 16px;
+        font-weight: 200;
+        letter-spacing: 2px;
+        
+}
+
 
 .btn-main {
     background-color: #333;

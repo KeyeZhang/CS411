@@ -26,6 +26,6 @@ VALUES
 ('$team3', '$id');";
 mysqli_query($conn,$sql_team);
 
-header("location: index.html");
+header("location: index.php");
 
 ?>
