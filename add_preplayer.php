@@ -13,5 +13,5 @@ VALUES
 mysqli_query($conn, $sql_player);
 
 
-
+header("Location: index.php");
 ?>

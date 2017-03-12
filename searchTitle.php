@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include 'dbh.php';
+    $currid = $_SESSION['id'];
     ?>
 <!DOCTYPE html>
 <html>
@@ -98,7 +100,22 @@ if($search != ''){
 						echo '<td>' . htmlentities($field).'</td>';
 					}
                 if (isset($_SESSION['id'])) {
-                echo '<form action="add_preplayer.php" method="post" target="rfFrame"><td><input type="hidden" name="preplayer" value="'. "$temp1".'"><input type="submit" value="prefer" class="btn-submit"></td></form><iframe style="display: none" id="rfFrame" name="rfFrame" src="about:blank"></iframe>';
+                    $duplicate="SELECT DISTINCT Players_Name FROM Favorite_player WHERE Users_ID = $currid";
+                    $re=mysqli_query($conn, $duplicate);
+                    $judge = 1;
+                    while($r=mysqli_fetch_assoc($re))
+                    {
+                        if($r['Players_Name']==$temp1){
+                            $judge=2;
+                        }
+                    }
+                    if($judge==1){
+                        echo '<form action="add_preplayer.php" method="post" ><td><input type="hidden" name="preplayer" value="'. "$temp1".'"><input type="submit" value="prefer" class="btn-submit"></td></form>';
+                    }
+                    else{
+                        echo '<td>Have been Prefered</td>';
+                    }
+                    
                 }
                 echo '</tr>';
 			}
@@ -143,7 +160,22 @@ if($search != ''){
 						echo '<td>' . htmlentities($field).'</td>';	
 					}
                 if (isset($_SESSION['id'])) {
-                    echo '<form action="add_preteam.php" method="post" target="rfFrame"><td><input type="hidden" name="preteam" value="'. "$temp2".'"><input type="submit" value="prefer" class="btn-submit"></td></form><iframe style="display: none" id="rfFrame" name="rfFrame" src="about:blank"></iframe>';
+                    $duplicate="SELECT DISTINCT Teams_Name FROM Favorite_team WHERE Users_ID = $currid";
+                    $re=mysqli_query($conn, $duplicate);
+                    $judge = 1;
+                    while($r=mysqli_fetch_assoc($re))
+                    {
+                        if($r['Teams_Name']==$temp2){
+                            $judge=2;
+                        }
+                    }
+                    if($judge==1){
+                        echo '<form action="add_preteam.php" method="post" ><td><input type="hidden" name="preteam" value="'. "$temp2".'"><input type="submit" value="prefer" class="btn-submit"></td></form>';
+                    }
+                    else{
+                        echo '<td>Have been Prefered</td>';
+                    }
+                    
                 }
 			 	echo '</tr>';
 			}
