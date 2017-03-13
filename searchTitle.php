@@ -157,13 +157,15 @@ if($search != ''){
                             $first_col2 = false;
                             $temp2 = htmlentities($field);
                         }
-						echo '<td>' . htmlentities($field).'</td>';	
+						echo '<td>' . htmlentities($field).'</td>';
+							
 					}
+					echo "<td><a href='./scorehero.php?team=$row[short_name]'><li>Find the Score Leader</li></a></td>";
                 if (isset($_SESSION['id'])) {
                     $duplicate="SELECT DISTINCT Teams_Name FROM Favorite_team WHERE Users_ID = $currid";
                     $re=mysqli_query($conn, $duplicate);
                     $judge = 1;
-                    while($r=mysqli_fetch_assoc($re))
+                    while($r=mysqli_fetch_assoc($er))
                     {
                         if($r['Teams_Name']==$temp2){
                             $judge=2;
