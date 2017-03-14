@@ -165,7 +165,7 @@ if($search != ''){
                     $duplicate="SELECT DISTINCT Teams_Name FROM Favorite_team WHERE Users_ID = $currid";
                     $re=mysqli_query($conn, $duplicate);
                     $judge = 1;
-                    while($r=mysqli_fetch_assoc($er))
+                    while($r=mysqli_fetch_assoc($re))
                     {
                         if($r['Teams_Name']==$temp2){
                             $judge=2;
